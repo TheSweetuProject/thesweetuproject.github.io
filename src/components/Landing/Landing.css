@@ -1,3 +1,29 @@
-.landing-container{
-  background-color: #F4E7D8;
+.hero-image{
+  color: white;
+  width:100vw;
+  height:90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../Images/table.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero-text h1{
+  font-size: 5em;
+  margin-bottom: 0.5em;
+}
+
+.hero-text p{
+  font-size: 1.5em;
+  margin-bottom: 0.25em;
+}
+
+.instagram {
+  background-color: black;
+  height: 1000px;
 }
