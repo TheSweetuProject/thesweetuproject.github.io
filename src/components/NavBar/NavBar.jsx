@@ -14,6 +14,12 @@ function Navbar (){
         ham();
     }
 
+    const ham = () => {
+        const burger = document.querySelector(".burger");
+        burger.classList.toggle("toggle");
+    }
+
+
     useEffect(() => {
         const changeWidth = () => {
             setScreenWidth(window.innerWidth);
@@ -21,10 +27,6 @@ function Navbar (){
         window.addEventListener('resize', changeWidth)
     }, [])
 
-    const ham = () => {
-        const burger = document.querySelector(".burger");
-        burger.classList.toggle("toggle");
-    }
 
     return(
         <section>
@@ -38,7 +40,7 @@ function Navbar (){
                         <li><Link to="/about">About</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                         <li><Link to="/Menu">Menu</Link></li>
-                        <li class="order_button"><a href="#">Order Now</a></li>
+                        <li class="order_button"><Link to="/Order">Order</Link></li>
                     </ul>
                 )}
                 

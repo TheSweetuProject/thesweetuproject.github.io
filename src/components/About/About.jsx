@@ -29,7 +29,7 @@ const About = () => {
           B.S Nutrition Science <br/>
           Pastry Arts - Internation Culinary Center 2016
         </Credentials>
-        <a href="https://www.instagram.com/thesweetuproject/?hl=en" target="_blank"><BsInstagram size={60}/></a>
+        <a href="https://www.instagram.com/thesweetuproject/?hl=en" target="_blank" rel="noopener noreferrer"><BsInstagram size={60}/></a>
       </AboutSection>
     </AboutContainer>
   )

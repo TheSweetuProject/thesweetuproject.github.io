@@ -6,9 +6,9 @@ import {
 } from './ContactElements.js';
 import { BsInstagram } from 'react-icons/bs';
 
-const style = {
-  resize: "none",
-}
+// const style = {
+//   resize: "none",
+// }
 
 const Contact = () => {
   return (
