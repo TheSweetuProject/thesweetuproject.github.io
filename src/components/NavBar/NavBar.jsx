@@ -31,23 +31,23 @@ function Navbar (){
     return(
         <section>
             <nav>
-                <Link to="/" class="logo">
+                <Link to="/" className="logo">
                     <img src={logo} alt="Sweetu-Logo"></img>
                     <p>Sweetu</p>
                 </Link>
                 {(toggleMenu || screenWidth > 1000) && (
-                    <ul class="nav-links">
-                        <li><Link to="/about">About</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
-                        <li><Link to="/Menu">Menu</Link></li>
-                        <li class="order_button"><Link to="/Order">Order</Link></li>
+                    <ul className="nav-links">
+                        <li onClick = {toggleNav}><Link to="/about">About</Link></li>
+                        <li onClick = {toggleNav}><Link to="/contact">Contact</Link></li>
+                        <li onClick = {toggleNav}><Link to="/Menu">Menu</Link></li>
+                        <li className="order_button" onClick = {toggleNav}><Link to="/Order">Order</Link></li>
                     </ul>
                 )}
                 
-                <div class="burger" onClick = {toggleNav}>
-                    <div class = "line1"></div>
-                    <div class = "line2"></div>
-                    <div class = "line3"></div>
+                <div className="burger" onClick = {toggleNav}>
+                    <div className = "line1"></div>
+                    <div className = "line2"></div>
+                    <div className = "line3"></div>
                 </div>
             </nav>
             

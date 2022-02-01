@@ -4,14 +4,14 @@ import './Landing.css';
 const Landing = () => {
   return (
     <section>
-            <div class="hero-image">
-                <div class="hero-text">
+            <div className="hero-image">
+                <div className="hero-text">
                     <h1>Care for a Slice?</h1>
                     <p>For the Sweetest bite you'll ever taste</p>
                     <p>Contact our prestigous baker to get started</p>
                 </div>
             </div>
-            <div class="instagram">
+            <div className="instagram">
             </div>   
         </section>
   )
