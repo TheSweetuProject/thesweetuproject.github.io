@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { send } from 'emailjs';
 import {
   ContactContainer,
   FormContainer,
@@ -11,6 +12,21 @@ import { BsInstagram } from 'react-icons/bs';
 // }
 
 const Contact = () => {
+  const [toSend, setToSend] = useState({
+    from_name: '',
+    message: '',
+  });
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSent(!sent);
+  }
+
+  const handleChange = (e) => {
+    setToSend({...toSend,[e.target.name]: e.target.value});
+  }
+
   return (
     <ContactContainer>
       <FormContainer>
@@ -25,8 +41,11 @@ const Contact = () => {
                 marginBottom:"10px"
               }
             }
+            name="from_name"
             size="20"
             placeholder="Email"
+            defaultValue={toSend.from_name}
+            onChange={handleChange}
           />
           <br/>
           <textarea
@@ -39,9 +58,12 @@ const Contact = () => {
                 fontSize:"25px"
               }
             }
+            name="message"
             rows="5"
             cols="22"
             placeholder="Message"
+            defaultValue={toSend.message}
+            onChange={handleChange}
           />
           <br/>
           <StyledButton type="submit">Send</StyledButton>
