@@ -1,34 +1,32 @@
 import React, { useState } from 'react';
-import { send } from 'emailjs';
 import {
   ContactContainer,
   FormContainer,
   StyledButton
 } from './ContactElements.js';
+import emailjs from '@emailjs/browser';
 import { BsInstagram } from 'react-icons/bs';
 
-// const style = {
-//   resize: "none",
-// }
-
 const Contact = () => {
-  const [toSend, setToSend] = useState({
-    from_name: '',
-    message: '',
-  });
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
+
+    emailjs.sendForm('service_hfon66p', 'template_cbzfwdn', e.target, 'user_CWvDaUwJyr3ZgRiAYPp2Q')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
+  const sentModal = () => {
     setSent(!sent);
   }
 
-  const handleChange = (e) => {
-    setToSend({...toSend,[e.target.name]: e.target.value});
-  }
-
   return (
-    <ContactContainer>
+    <ContactContainer onSubmit={sendEmail}>
       <FormContainer>
         <form>
           <label style={{fontSize:"30px", marginRight:"70px"}}>Ask us Anything!</label> <br/>
@@ -44,8 +42,8 @@ const Contact = () => {
             name="from_name"
             size="20"
             placeholder="Email"
-            defaultValue={toSend.from_name}
-            onChange={handleChange}
+            type="email"
+            required
           />
           <br/>
           <textarea
@@ -58,12 +56,12 @@ const Contact = () => {
                 fontSize:"25px"
               }
             }
+            type="text"
             name="message"
             rows="5"
             cols="22"
             placeholder="Message"
-            defaultValue={toSend.message}
-            onChange={handleChange}
+            required
           />
           <br/>
           <StyledButton type="submit">Send</StyledButton>
