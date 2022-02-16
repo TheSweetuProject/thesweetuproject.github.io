@@ -7,13 +7,17 @@ export const AboutContainer = styled.div`
   justify-contents: center;
   background-color: #F4E7D8;
   font-family: Roboto;
+  @media screen and (max-width: 1025px) {
+    display: block;
+  }
 `;
 
 export const StyledImg = styled.img`
-  max-width: 100%;
+  height: 90vh;
 `;
 
 export const AboutSection = styled.div`
+  margin-top: 100px;
 `;
 
 export const Header = styled.h1`
