@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
 export const ContactContainer = styled.div`
+  display: grid;
+  grid-template-colums: 1fr 1fr;
+  grid-template-areas: "image form"
   background-color: #F4E7D8;
   width: 100%;
   height: 100%;
   padding-top: 100px;
   padding-bottom: 100px;
+`;
+
+export const StyledImage = styled.div`
 `;
 
 export const FormContainer = styled.div`
