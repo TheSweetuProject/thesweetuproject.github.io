@@ -4,19 +4,21 @@ export const AboutContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "image about";
-  justify-contents: center;
   background-color: #F4E7D8;
   font-family: Roboto;
   @media screen and (max-width: 1025px) {
     display: block;
+    padding-top: 20px;
   }
 `;
 
 export const StyledImg = styled.img`
+  grid-area: image;
   height: 90vh;
 `;
 
 export const AboutSection = styled.div`
+  grid-area: about;
   margin-top: 100px;
 `;
 
