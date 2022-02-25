@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import {
   ContactContainer,
   FormContainer,
+  StyledImage,
   StyledButton
 } from './ContactElements.js';
+import breadImage from '../Images/bread.jpg';
 import emailjs from '@emailjs/browser';
 import { BsInstagram } from 'react-icons/bs';
 
@@ -27,6 +29,7 @@ const Contact = () => {
 
   return (
     <ContactContainer onSubmit={sendEmail}>
+      <StyledImage src={breadImage}/>
       <FormContainer>
         <form>
           <label style={{fontSize:"30px", marginRight:"70px"}}>Ask us Anything!</label> <br/>
@@ -67,7 +70,6 @@ const Contact = () => {
           <StyledButton type="submit">Send</StyledButton>
         </form>
       </FormContainer>
-      <BsInstagram size={60}/>
     </ContactContainer>
   )
 }
